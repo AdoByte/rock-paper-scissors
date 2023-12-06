@@ -9,8 +9,8 @@ def play_rock():
     while True:
 
         moves_dict = {'r':'rock', 'p':'paper', 's':'scissors'}
-        valid_moves_keys = list(moves_dict.keys())
-        valid_moves_value = list(moves_dict.values())
+        valid_keys = list(moves_dict.keys())
+        valid_values = list(moves_dict.values())
 
         user_input = input("Rock, Paper or Scissors.\nYou can use 'R', 'P' or 'S' >> ").lower()
 
@@ -18,17 +18,17 @@ def play_rock():
             print('Thank you for playing')
             break
 
-        if user_input not in valid_moves_keys and user_input not in valid_moves_value:
+        if user_input not in valid_keys and user_input not in valid_values:
             print("Invalid move. . .")
             continue
 
-        ai_input = choice(valid_moves_keys)
+        ai_input = choice(valid_keys)
 
         print("____________")
-        if user_input in valid_moves_keys:
+        if user_input in valid_keys:
             print(f"You played: {moves_dict[user_input]}", end=", ")
             print(f"AI played: {moves_dict[ai_input]}")
-        elif user_input in valid_moves_value:
+        elif user_input in valid_values:
             print(f"You played: {user_input}", end=", ")
             print(f"AI played: {moves_dict[ai_input]}")
         print("____________")
