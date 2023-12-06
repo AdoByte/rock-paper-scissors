@@ -1,5 +1,6 @@
 from random import choice
 
+
 def play_rock():
 
     while True:
@@ -13,7 +14,7 @@ def play_rock():
             print('Thank you for playing')
             break
 
-        if user_input not in valid_moves_keys or user_input not in valid_moves_value:
+        if user_input not in valid_moves_keys and user_input not in valid_moves_value:
             print("Invalid move. . .")
             continue
 
@@ -28,17 +29,19 @@ def play_rock():
             print(f"AI played: {moves_dict[ai_input]}")
         print("____________")
 
-        if user_input == ai_input:
+        if user_input == ai_input or user_input == moves_dict[ai_input]:
             print("It's a tie")
-        elif user_input == 'rock' and ai_input == 'scissors':
+        elif user_input == 'r' and ai_input == 's' or user_input == 'rock' and moves_dict[ai_input]\
+                == 'scissors':
             print("You win!")
-        elif user_input == 'scissors' and ai_input == 'paper':
+        elif user_input == 's' and ai_input == 'p' or user_input == 'scissors' and moves_dict[ai_input]\
+                == 'paper':
             print("You win!")
-        elif user_input == 'paper' and ai_input == 'rock':
+        elif user_input == 'p' and ai_input == 'r' or user_input == 'paper' and moves_dict[ai_input]\
+                == 'rock':
             print("You win!")
         else:
-            print("AI wins!!!")
-
+            print("AI wins!")
         print("____________")
 
 
