@@ -15,6 +15,16 @@ def play_rock():
             print("Invalid move. . .")
             continue
 
+        ai_input = choice(valid_moves)
+
+        print()
+        print(f"You played: {user_input}")
+        print(f"AI played: {ai_input}")
+        print()
+
+        
+
+
 
 
 
